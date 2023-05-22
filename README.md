@@ -24,16 +24,20 @@ conda create -n demo python=3.8
 ### Get a compute node
 Either of these following two mentods works. Choose the one that you prefer.
 
-Please note that the queue, TACC-DIC, is excluded to TACC employee. Please replace it with your own queue. 
-
-To know more about how to connect to a compute node, please check this [tutorial](https://docs.tacc.utexas.edu/software/idev/).
+Please note that the queue name (following -p), TACC-DIC, is excluded to TACC employee. Please replace it with your own queue. 
 
 1. idev
+
+Run the following command in your terminal. 
+
+To know more about idev, please check this [tutorial](https://docs.tacc.utexas.edu/software/idev/).
+
 ```
 idev -N 1 -n 4 -p rtx -A TACC-DIC -t 48:00:00
 ```
 
 2. sbatch
+
 Create a file, say, rtx.slurm, then copy and paste the following code to it. After that, run `sbatch rtx.slurm` in terminal.
 ```
 #!/bin/bash
