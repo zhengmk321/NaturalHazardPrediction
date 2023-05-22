@@ -67,6 +67,9 @@ python3 -m ipykernel install --user --name=demo
 
 After running the code above, use this [website](https://tap.tacc.utexas.edu/jobs/) to create a jupyter notebook job. (You can try to use vs code and void running the commands above, but you will find that it cannot connect to your compute node.)
 
+## Prepare the dataset
+We have prepared the dataset for this demo. Please run `./copy-data.ipynb` to copy it to your local machine (compute node).
+
 ## Single GPU training (Jupyter notebook files)
 
 `torch-train-1st.ipynb`, `torch-train-2nd.ipynb`, and `torch-train-3rd.ipynb` correspond to `DesignSafe-NaturalHazard-Tutorial-Train-1st.ipynb`, `DesignSafe-NaturalHazard-Tutorial-Train-2nd.ipynb`, and `DesignSafe-NaturalHazard-Tutorial-Train-3rd.ipynb` written in tensorflow and keras.
