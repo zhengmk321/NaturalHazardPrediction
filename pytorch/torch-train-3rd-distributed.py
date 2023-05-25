@@ -160,7 +160,7 @@ def train(train_loader, val_loader, model, opt, scheduler, loss_fn, epochs, DEVI
       print(f"(Epoch {epoch+1}/{epochs}) Current best val acc: {best_val_acc}\n")  
 
 def load_checkpoint(checkpoint_path, DEVICE):
-  checkpoint = torch.load(checkpoint_path, map_location=torch.to(DEVICE))
+  checkpoint = torch.load(checkpoint_path, map_location=DEVICE)
   return checkpoint
 
 def load_model_fm_checkpoint(checkpoint, primitive_model):
@@ -227,7 +227,7 @@ def main():
 
   if rank == 0:
     primitive_model = getVGGModel().to(DEVICE)
-    checkpoint = load_checkpoint(checkpoint_file)
+    checkpoint = load_checkpoint(checkpoint_file, DEVICE)
     best_model = load_model_fm_checkpoint(checkpoint,primitive_model)
     loss, acc = eval_model(val_dataloader,best_model,loss_fn,DEVICE)
     print(f"\nBest model (val loss: {loss}, val accuracy: {acc}) has been saved to {checkpoint_file}\n")
