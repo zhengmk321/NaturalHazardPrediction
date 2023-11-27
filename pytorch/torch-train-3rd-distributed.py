@@ -2,10 +2,6 @@
 # NOTE: To run this script, run "sh torch-distributed.sh" in the terminal
 # NOTE: Remember to activate the virtual environment that has all the dependencies installed. (pip3 -r install requirements.txt)
 
-# Good combo of hyper parameters: 
-# (lr=1e-7, linear layer neurons=4096)->val acc~65%
-# (lr=1e-5, linear layer neurons=2048)->val acc~65%
-
 
 import sys
 import os
